@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lotto Lit 912 — The Coast, County by County</title>
+<meta name="description" content="Lotto Lit 912 is a directory and storytelling project covering every county in Georgia's 912 area code, one business, one story at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #B31F24;
+    --red-deep: #7A1418;
+    --black: #121212;
+    --black-soft: #1B1B1B;
+    --gold: #C9971E;
+    --gold-bright: #E4B84A;
+    --bone: #EDE6D6;
+    --ink: #1A1A1A;
+    --bone-line: #DCD2B8;
+    --muted: #5C5748;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--black);
+  }
+
+  a { color: inherit; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    padding: 20px 0;
+    background: var(--black);
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--bone);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .wordmark span {
+    color: var(--red);
+  }
+
+  nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    color: var(--bone);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+    transition: border-color 0.15s ease;
+  }
+
+  nav a:hover {
+    border-bottom-color: var(--gold-bright);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 72px 0 64px;
+    background: var(--black);
+    color: var(--bone);
+    border-bottom: 1px solid #2A2A2A;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.92rem;
+    color: var(--gold-bright);
+    margin-bottom: 16px;
+    max-width: 42ch;
+  }
+
+  .hero h1 {
+    color: var(--bone);
+    font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+    max-width: 17ch;
+    margin-bottom: 22px;
+  }
+
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    max-width: 54ch;
+    color: #C7C0AC;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--bone);
+  }
+
+  .btn-primary:hover { background: var(--red-deep); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--bone);
+    border: 1px solid var(--gold);
+  }
+
+  .btn-secondary:hover { background: rgba(201,151,30,0.12); }
+
+  /* ---------- Ambassador (moved near top) ---------- */
+
+  .ambassador {
+    background: var(--black-soft);
+    color: var(--bone);
+    padding: 80px 0 88px;
+    border-bottom: 1px solid #2A2A2A;
+  }
+
+  .amb-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .amb-mark {
+    width: 100%;
+  }
+
+  .amb-name {
+    font-size: 0.86rem;
+    letter-spacing: 0.05em;
+    color: var(--gold-bright);
+    margin-bottom: 14px;
+  }
+
+  .ambassador h2 {
+    color: var(--bone);
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+    max-width: 18ch;
+    margin-bottom: 20px;
+  }
+
+  .ambassador p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: #C7C0AC;
+    max-width: 54ch;
+    margin-bottom: 14px;
+  }
+
+  .amb-line {
+    color: var(--gold-bright);
+    font-style: italic;
+  }
+
+  /* ---------- How it works ---------- */
+
+  .how {
+    padding: 76px 0;
+    border-bottom: 1px solid var(--bone-line);
+  }
+
+  .section-head {
+    max-width: 62ch;
+    margin-bottom: 46px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 14px;
+  }
+
+  .section-head p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.02rem;
+    color: var(--muted);
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--bone-line);
+  }
+
+  .how-item {
+    padding: 30px 26px 0 0;
+    border-right: 1px solid var(--bone-line);
+  }
+
+  .how-item:last-child { border-right: none; }
+
+  .how-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .how-item p {
+    font-size: 0.96rem;
+    color: var(--muted);
+  }
+
+  /* ---------- County spotlight ---------- */
+
+  .spotlight {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--bone-line);
+  }
+
+  .spotlight-label {
+    font-size: 0.92rem;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .spotlight-card {
+    background: #FFFDF7;
+    border: 1px solid var(--bone-line);
+    border-left: 4px solid var(--red);
+    border-radius: 2px;
+    padding: 32px;
+    max-width: 640px;
+  }
+
+  .spotlight-card h3 {
+    color: var(--black);
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+  }
+
+  .spotlight-card p {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .induction-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    padding: 6px 14px 6px 10px;
+    background: var(--black);
+    color: var(--gold-bright);
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+
+  .induction-tag .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold-bright);
+  }
+
+  .spotlight-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+  .tag {
+    font-size: 0.83rem;
+    padding: 5px 12px;
+    background: var(--bone);
+    border: 1px solid var(--bone-line);
+    border-radius: 20px;
+    color: var(--ink);
+  }
+
+  .spotlight-card a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.96rem;
+  }
+
+  .spotlight-card a:hover { text-decoration: underline; }
+
+  /* ---------- For businesses ---------- */
+
+  .for-business {
+    padding: 88px 0;
+    border-bottom: 1px solid var(--bone-line);
+  }
+
+  .fb-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .fb-row h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom: 22px;
+    max-width: 16ch;
+  }
+
+  .fb-row p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.02rem;
+    color: var(--muted);
+    margin-bottom: 22px;
+    max-width: 48ch;
+  }
+
+  .fb-list {
+    list-style: none;
+    border-top: 1px solid var(--bone-line);
+  }
+
+  .fb-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--bone-line);
+    display: flex;
+    gap: 18px;
+  }
+
+  .fb-list .num {
+    font-family: 'Fraunces', serif;
+    color: var(--red);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .fb-list h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .fb-list p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    max-width: 40ch;
+    margin-bottom: 0;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding: 44px 0 38px;
+    background: var(--black);
+    color: var(--bone);
+  }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-counties {
+    font-family: 'Fraunces', serif;
+    font-size: 0.92rem;
+    color: #A69F8C;
+    max-width: 46ch;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 22px;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--bone);
+  }
+
+  .footer-links a:hover { color: var(--gold-bright); }
+
+  .footer-fine {
+    margin-top: 28px;
+    font-size: 0.82rem;
+    color: #6B6553;
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+
+    .how-grid,
+    .amb-row {
+      grid-template-columns: 1fr;
+    }
+
+    .amb-row {
+      gap: 30px;
+    }
+
+    .amb-mark {
+      width: 110px;
+    }
+
+    .how-item {
+      border-right: none;
+      border-bottom: 1px solid var(--bone-line);
+      padding: 26px 0;
+    }
+
+    .how-item:last-child { border-bottom: none; }
+
+    .fb-row {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .footer-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gold-bright);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a href="#" class="wordmark">Lotto Lit<span>·</span>912</a>
+    <nav>
+      <a href="#ambassador">The Ambassador</a>
+      <a href="#how">How it works</a>
+      <a href="#spotlight">Directory</a>
+      <a href="#for-business">For businesses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">A directory and storytelling project covering the entire 912 area code</p>
+    <h1>Every county on the coast has a business worth knowing about. We're finding all of them.</h1>
+    <p class="hero-sub">Lotto Lit 912 is building the first real record of who's operating across Georgia's coastal counties — stylists, tradespeople, painters, musicians, and everyone else worth knowing — told through the stories that make each town worth visiting.</p>
+    <div class="hero-actions">
+      <a href="#spotlight" class="btn btn-primary">See who's featured</a>
+      <a href="#for-business" class="btn btn-secondary">Get your business listed</a>
+    </div>
+  </div>
+</section>
+
+<section class="ambassador" id="ambassador">
+  <div class="wrap amb-row">
+    <img src="https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/Lotto%20Lit_20260915_184536_0000.png?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9Mb3R0byBMaXRfMjAyNjA5MTVfMTg0NTM2XzAwMDAucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4OTUxNTE1NCwiZXhwIjoxODIxMDUxMTU0fQ.54mwYnEJ0dsBvc1X5ZuGQ0fYvu4xdPt6vRPmdwaAJH2QudGekKpeJ0OoQ5fGHXbzz6fBdSS2t7DR7If1NlUjag" alt="Lotto Lit 912 mascot placeholder mark" class="amb-mark">
+    <div>
+      <p class="amb-name">The Ambassador</p>
+      <h2>He doesn't claim the 912. He represents it.</h2>
+      <p>Lotto Lit 912 connects the area with itself and carries it to the world stage. Where he shows up, it means something — no manifesto, no announcement, just the pattern over time.</p>
+      <p class="amb-line">Not everyone gets the mark.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Most directories stop at a name and a star rating. We go further.</h2>
+      <p>Every listing starts with real signals you can't get from a review site — actual history, actual specialties, and how a business fits into its county.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-item">
+        <h3>Built from real signals</h3>
+        <p>Years in business, real specialties, and location fit — read from public records and a business's own presence, not filled in from a template.</p>
+      </div>
+      <div class="how-item">
+        <h3>Told as a story</h3>
+        <p>Every business, artist, and musician we feature gets a real write-up — how they started, what they're known for, and why their county should know their name.</p>
+      </div>
+      <div class="how-item">
+        <h3>Built county by county</h3>
+        <p>We're not starting with Savannah and calling it done. Every county in the 912 gets its own coverage, on its own timeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spotlight" id="spotlight">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="spotlight-label">Now covering</p>
+      <h2>Bulloch County, hair &amp; barber</h2>
+      <p>Our first county is live. Real specialty tags, real history, and the stories behind the chairs.</p>
+    </div>
+    <div class="spotlight-card">
+      <div class="induction-tag"><span class="dot"></span>Inducted</div>
+      <h3>First features are going up now</h3>
+      <p>We're publishing profiles for stylists and barbers across Bulloch County as they're confirmed — no filler listings, no unverified claims.</p>
+      <div class="spotlight-tags">
+        <span class="tag">Statesboro &amp; Bulloch County</span>
+        <span class="tag">Specialty tagged</span>
+        <span class="tag">Independently owned</span>
+      </div>
+      <a href="#for-business">Know a shop that should be featured? &nbsp;›</a>
+    </div>
+  </div>
+</section>
+
+<section class="for-business" id="for-business">
+  <div class="wrap fb-row">
+    <div>
+      <h2>If you run the business, this part's for you.</h2>
+      <p>We write a free feature for select businesses in each county we cover — a real profile of your work, published on the site and shared to our audience. No cost, no catch, and nothing you have to write yourself.</p>
+      <p>If it does well, it may also become a short video for our TikTok and YouTube pages — but that's a bonus, never a promise attached to the feature.</p>
+      <a href="mailto:hello@lottolit912.com" class="btn btn-primary">Ask about a feature</a>
+    </div>
+    <ul class="fb-list">
+      <li>
+        <span class="num">1</span>
+        <div>
+          <h4>Tell us about the shop</h4>
+          <p>A few questions about your work, your specialties, and how long you've been in business.</p>
+        </div>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <div>
+          <h4>We write the feature</h4>
+          <p>A real profile, not a template — published on the county directory page.</p>
+        </div>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <div>
+          <h4>You share it however you'd like</h4>
+          <p>It's yours to repost, link, or hand to a customer who asks where to find you.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <p class="footer-counties">Covering Chatham, Bulloch, Glynn, Liberty, Effingham, Bryan, and every other county in the 912.</p>
+      <div class="footer-links">
+        <a href="#ambassador">The Ambassador</a>
+        <a href="#how">How it works</a>
+        <a href="#spotlight">Directory</a>
+        <a href="#for-business">For businesses</a>
+      </div>
+    </div>
+    <p class="footer-fine">Lotto Lit 912 · Georgia's coast, county by county</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
