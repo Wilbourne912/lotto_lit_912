@@ -103,10 +103,26 @@
   /* ---------- Hero ---------- */
 
   .hero {
+    position: relative;
     padding: 72px 0 64px;
-    background: var(--black);
+    background: var(--black) url('https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/Lotto%20Lit_20260915_184536_0000%20(1).png?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9Mb3R0byBMaXRfMjAyNjA5MTVfMTg0NTM2XzAwMDAgKDEpLnBuZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODk1MTY4NjcsImV4cCI6MTgyMTA1Mjg2N30.S4KMjmRxaF-C6U270lLMW090EhBhOQLJXN4xg-vPPjsPMBIXPFkFT_79B8sx181Z-8iOyqyFk9PdEgj5Cg2A-g') center 30% / cover no-repeat;
     color: var(--bone);
     border-bottom: 1px solid #2A2A2A;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(18,18,18,0.55) 0%, rgba(18,18,18,0.88) 78%, rgba(18,18,18,0.96) 100%);
+  }
+
+  .hero .wrap {
+    position: relative;
+  }
+
+  .hero-banner-space {
+    height: 260px;
   }
 
   .hero-eyebrow {
@@ -180,7 +196,12 @@
   }
 
   .amb-mark {
-    width: 100%;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 3px solid var(--gold-bright);
   }
 
   .amb-name {
@@ -444,6 +465,10 @@
   @media (max-width: 760px) {
     nav { display: none; }
 
+    .hero-banner-space {
+      height: 170px;
+    }
+
     .how-grid,
     .amb-row {
       grid-template-columns: 1fr;
@@ -455,6 +480,7 @@
 
     .amb-mark {
       width: 110px;
+      height: 110px;
     }
 
     .how-item {
@@ -502,6 +528,7 @@
 
 <section class="hero">
   <div class="wrap">
+    <div class="hero-banner-space"></div>
     <p class="hero-eyebrow">A directory and storytelling project covering the entire 912 area code</p>
     <h1>Every county on the coast has a business worth knowing about. We're finding all of them.</h1>
     <p class="hero-sub">Lotto Lit 912 is building the first real record of who's operating across Georgia's coastal counties — stylists, tradespeople, painters, musicians, and everyone else worth knowing — told through the stories that make each town worth visiting.</p>
@@ -514,7 +541,7 @@
 
 <section class="ambassador" id="ambassador">
   <div class="wrap amb-row">
-    <img src="https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/Lotto%20Lit_20260915_184536_0000.png?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9Mb3R0byBMaXRfMjAyNjA5MTVfMTg0NTM2XzAwMDAucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4OTUxNTE1NCwiZXhwIjoxODIxMDUxMTU0fQ.54mwYnEJ0dsBvc1X5ZuGQ0fYvu4xdPt6vRPmdwaAJH2QudGekKpeJ0OoQ5fGHXbzz6fBdSS2t7DR7If1NlUjag" alt="Lotto Lit 912 mascot placeholder mark" class="amb-mark">
+    <img src="https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/Lotto%20Lit_20260915_195407_0000.png?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9Mb3R0byBMaXRfMjAyNjA5MTVfMTk1NDA3XzAwMDAucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4OTUxNjU5NSwiZXhwIjoxODIxMDUyNTk1fQ.UFet0OksvGIrx7USegw6NbDHR30diH9I6Y0N6kS-SBpciVq4pEU4tMX9n47RO8DpLd92S53UHoVLhyfDVThybg" alt="Lotto Lit 912 ambassador" class="amb-mark">
     <div>
       <p class="amb-name">The Ambassador</p>
       <h2>He doesn't claim the 912. He represents it.</h2>
