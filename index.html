@@ -231,6 +231,40 @@
     font-style: italic;
   }
 
+  /* ---------- Lifestyle teaser (small, distinct from Ambassador) ---------- */
+
+  .lifestyle-teaser {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--bone-line);
+    background: #FFFDF7;
+  }
+
+  .lifestyle-teaser-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .lifestyle-teaser-text p {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .lifestyle-teaser-text span {
+    color: var(--red);
+    font-weight: 600;
+  }
+
+  .lifestyle-teaser .btn {
+    flex-shrink: 0;
+    padding: 11px 22px;
+    font-size: 0.88rem;
+  }
+
   /* ---------- How it works ---------- */
 
   .how {
@@ -530,6 +564,7 @@
     <a href="#" class="wordmark">Lotto Lit<span>·</span>912</a>
     <nav>
       <a href="#ambassador">The Ambassador</a>
+      <a href="/lifestyle/">Lifestyle</a>
       <a href="#how">How it works</a>
       <a href="#spotlight">Directory</a>
       <a href="#for-business">For businesses</a>
@@ -559,6 +594,15 @@
       <p>Lotto Lit 912 connects the area with itself and carries it to the world stage. Where he shows up, it means something — no manifesto, no announcement, just the pattern over time.</p>
       <p class="amb-line">Not everyone gets the mark.</p>
     </div>
+  </div>
+</section>
+
+<section class="lifestyle-teaser">
+  <div class="wrap lifestyle-teaser-row">
+    <div class="lifestyle-teaser-text">
+      <p>There's a person behind the mark. <span>Meet Lotto Lit</span> — his story, his rap, his game, his grind.</p>
+    </div>
+    <a href="/lifestyle/" class="btn btn-secondary" style="color: var(--ink); border-color: var(--red);">Lotto Lit Lifestyle</a>
   </div>
 </section>
 
@@ -656,6 +700,12 @@
   </div>
 </footer>
 
+<!-- ============================================================
+     LOTTO LIT 912 — SHARED EMAIL SIGNUP POPUP
+     Paste this whole block (HTML + style + script) before </body>
+     on every page. Nothing else needs to change per-page.
+     ============================================================ -->
+
 <div id="signup-popup" class="signup-popup hidden">
   <div class="signup-popup-inner">
     <button id="signup-close" class="signup-close" aria-label="Close">&times;</button>
@@ -740,164 +790,4 @@
   }
 
   .toggle-btn {
-    flex: 1;
-    background: transparent;
-    border: 1px solid #444;
-    color: #C7C0AC;
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.78rem;
-    padding: 7px 4px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-
-  .toggle-btn.active {
-    background: #B31F24;
-    border-color: #B31F24;
-    color: #fff;
-  }
-
-  #signup-form input[type="email"],
-  #signup-form input[type="text"] {
-    width: 100%;
-    padding: 9px 10px;
-    margin-bottom: 8px;
-    border: 1px solid #444;
-    border-radius: 3px;
-    background: #1B1B1B;
-    color: #EDE6D6;
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.9rem;
-    box-sizing: border-box;
-  }
-
-  .signup-submit {
-    width: 100%;
-    padding: 10px;
-    background: #B31F24;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-  }
-
-  .signup-submit:hover { background: #7A1418; }
-
-  .business-field.hidden { display: none; }
-
-  .signup-status {
-    font-size: 0.8rem;
-    margin: 8px 0 0;
-    min-height: 1em;
-  }
-
-  .signup-status.success { color: #E4B84A; }
-  .signup-status.error { color: #ff8080; }
-
-  @media (max-width: 480px) {
-    .signup-popup {
-      left: 16px;
-      right: 16px;
-      max-width: none;
-      bottom: 16px;
-    }
-  }
-</style>
-
-<script>
-(function () {
-  const SUPABASE_URL = "https://bjsesbhhheitkkbnsvsy.supabase.co";
-  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqc2VzYmhoaGVpdGtrYm5zdnN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1MTIwNjUsImV4cCI6MjEwNTA4ODA2NX0.t5yUjgvPbjwUpd7OpBU_Qsk3XqiVRf6jRM-6Ygs7X38";
-
-  const popup = document.getElementById("signup-popup");
-  const closeBtn = document.getElementById("signup-close");
-  const toggleBtns = document.querySelectorAll(".toggle-btn");
-  const typeInput = document.getElementById("signup-type");
-  const businessField = document.getElementById("business-name-field");
-  const form = document.getElementById("signup-form");
-  const status = document.getElementById("signup-status");
-
-  const STORAGE_KEY = "lottolit912_signup_dismissed";
-  let hasShown = false;
-
-  // Don't re-show if already dismissed or submitted this session
-  if (sessionStorage.getItem(STORAGE_KEY)) {
-    popup.remove();
-    return;
-  }
-
-  window.addEventListener("scroll", function () {
-    if (hasShown) return;
-    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrolled > 40) {
-      hasShown = true;
-      popup.classList.remove("hidden");
-      requestAnimationFrame(() => popup.classList.add("visible"));
-    }
-  });
-
-  closeBtn.addEventListener("click", function () {
-    popup.classList.remove("visible");
-    sessionStorage.setItem(STORAGE_KEY, "1");
-    setTimeout(() => popup.classList.add("hidden"), 300);
-  });
-
-  toggleBtns.forEach(btn => {
-    btn.addEventListener("click", function () {
-      toggleBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const type = btn.dataset.type;
-      typeInput.value = type;
-      businessField.classList.toggle("hidden", type !== "business");
-    });
-  });
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const email = document.getElementById("signup-email").value.trim();
-    const type = typeInput.value;
-    const businessName = document.getElementById("business-name").value.trim();
-
-    status.textContent = "Submitting...";
-    status.className = "signup-status";
-
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/email_signups`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": SUPABASE_ANON_KEY,
-          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
-        },
-        body: JSON.stringify({
-          email: email,
-          signup_type: type,
-          business_name: type === "business" ? businessName : null
-        })
-      });
-
-      if (!res.ok) throw new Error("Submission failed");
-
-      status.textContent = "You're in. Welcome to the 912.";
-      status.className = "signup-status success";
-      sessionStorage.setItem(STORAGE_KEY, "1");
-      form.reset();
-      setTimeout(() => {
-        popup.classList.remove("visible");
-        setTimeout(() => popup.classList.add("hidden"), 300);
-      }, 2000);
-
-    } catch (err) {
-      status.textContent = "Something went wrong. Try again.";
-      status.className = "signup-status error";
-    }
-  });
-})();
-</script>
-
-
-</body>
-</html>
-
+ 
