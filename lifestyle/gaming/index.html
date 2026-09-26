@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaming — Lotto Lit Lifestyle</title>
+<meta name="description" content="Where the freestyles started — gaming sessions, streams, and the community around it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #B31F24;
+    --red-deep: #7A1418;
+    --black: #121212;
+    --black-soft: #1B1B1B;
+    --gold: #C9971E;
+    --gold-bright: #E4B84A;
+    --bone: #EDE6D6;
+    --ink: #1A1A1A;
+    --bone-line: #DCD2B8;
+    --muted: #5C5748;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--black);
+  }
+
+  a { color: inherit; }
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  header {
+    padding: 20px 0;
+    background: var(--black);
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .header-row {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--bone);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .wordmark span { color: var(--red); }
+
+  nav { display: flex; gap: 30px; }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    color: var(--bone);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+  }
+
+  nav a:hover { border-bottom-color: var(--gold-bright); }
+
+  .crumb {
+    padding: 18px 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .crumb a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .crumb a:hover { text-decoration: underline; }
+
+  .page-hero {
+    padding: 20px 0 44px;
+    border-bottom: 1px solid var(--bone-line);
+  }
+
+  .page-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    max-width: 18ch;
+    margin-bottom: 16px;
+  }
+
+  .page-hero p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 60ch;
+  }
+
+  .page-body {
+    padding: 48px 0 80px;
+  }
+
+  .page-body h2 {
+    font-size: 1.4rem;
+    margin: 36px 0 14px;
+  }
+
+  .page-body h2:first-child { margin-top: 0; }
+
+  .page-body p {
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 16px;
+    max-width: 68ch;
+  }
+
+  .placeholder-note {
+    background: #FFF9E6;
+    border: 1px dashed var(--gold);
+    border-radius: 3px;
+    padding: 16px 18px;
+    font-size: 0.88rem;
+    color: #6B5A1E;
+    margin: 24px 0;
+    max-width: 68ch;
+  }
+
+  .media-placeholder {
+    background: var(--black-soft);
+    border: 1px solid #2A2A2A;
+    border-radius: 3px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B6553;
+    font-size: 0.85rem;
+    margin: 24px 0;
+    max-width: 68ch;
+  }
+
+  .back-to-hub {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--red);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .back-to-hub:hover { text-decoration: underline; }
+
+  footer {
+    padding: 40px 0 34px;
+    background: var(--black);
+    color: var(--bone);
+  }
+
+  .footer-row {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-links { display: flex; gap: 22px; }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--bone);
+  }
+
+  .footer-links a:hover { color: var(--gold-bright); }
+
+  .footer-fine {
+    font-size: 0.82rem;
+    color: #6B6553;
+  }
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gold-bright);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <a href="/" class="wordmark">Lotto Lit<span>·</span>912</a>
+    <nav>
+      <a href="/#ambassador">The Ambassador</a>
+      <a href="/lifestyle/">Lifestyle</a>
+      <a href="/#spotlight">Directory</a>
+      <a href="/#for-business">For businesses</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap crumb">
+  <a href="/lifestyle/">Lotto Lit Lifestyle</a> / Gaming
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="page-tag">GAMING</span>
+    <h1>The gamer side</h1>
+    <p>This is actually where it all started — freestyling during online gaming sessions before battle rap ever entered the picture.</p>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="wrap">
+
+    <h2>Where it began</h2>
+    <p>[Placeholder — the gaming-to-freestyle origin story, matching the established Lowport arc: freestyling during online gaming sessions came first.]</p>
+    <div class="media-placeholder">[ Photo / video placeholder ]</div>
+
+    <h2>Streams &amp; community</h2>
+    <p>[Placeholder — current gaming content, streams, community built around it.]</p>
+    <div class="placeholder-note">Placeholder content — swap this in for the real material from the Lotto Lit Brand Building project (or write fresh) before this page goes live.</div>
+
+    <a href="/lifestyle/" class="back-to-hub">&larr; Back to Lotto Lit Lifestyle</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-row">
+    <div class="footer-links">
+      <a href="/#ambassador">The Ambassador</a>
+      <a href="/#spotlight">Directory</a>
+      <a href="/#for-business">For businesses</a>
+    </div>
+    <p class="footer-fine">Lotto Lit 912 &middot; Georgia's coast, county by county</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     LOTTO LIT 912 — SHARED EMAIL SIGNUP POPUP
+     Paste this whole block (HTML + style + script) before </body>
+     on every page. Nothing else needs to change per-page.
+     ============================================================ -->
+
+<div id="signup-popup" class="signup-popup hidden">
+  <div class="signup-popup-inner">
+    <button id="signup-close" class="signup-close" aria-label="Close">&times;</button>
+    <p class="signup-eyebrow">Stay Connected to the 912</p>
+    <h3>Get updates, or get your business seen.</h3>
+
+    <div class="signup-toggle">
+      <button type="button" class="toggle-btn active" data-type="visitor">I'm a visitor</button>
+      <button type="button" class="toggle-btn" data-type="business">I run a business</button>
+    </div>
+
+    <form id="signup-form">
+      <input type="hidden" id="signup-type" value="visitor">
+      <div id="business-name-field" class="business-field hidden">
+        <input type="text" id="business-name" placeholder="Business name">
+      </div>
+      <input type="email" id="signup-email" placeholder="you@email.com" required>
+      <button type="submit" class="signup-submit">Sign Up</button>
+      <p id="signup-status" class="signup-status"></p>
+    </form>
+  </div>
+</div>
+
+<style>
+  .signup-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 340px;
+    background: #121212;
+    border: 1px solid #C9971E;
+    border-radius: 4px;
+    padding: 22px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    z-index: 1000;
+    font-family: 'Oswald', sans-serif;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .signup-popup.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .signup-popup.hidden { display: none; }
+
+  .signup-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #EDE6D6;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .signup-eyebrow {
+    color: #E4B84A;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    margin: 0 0 6px;
+  }
+
+  .signup-popup h3 {
+    color: #EDE6D6;
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    margin: 0 0 14px;
+    line-height: 1.3;
+  }
+
+  .signup-toggle {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #444;
+    color: #C7C0AC;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.78rem;
+    padding: 7px 4px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .toggle-btn.active {
+    background: #B31F24;
+    border-color: #B31F24;
+    color: #fff;
+  }
+
+  #signup-form input[type="email"],
+  #signup-form input[type="text"] {
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    background: #1B1B1B;
+    color: #EDE6D6;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .signup-submit {
+    width: 100%;
+    padding: 10px;
+    background: #B31F24;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .signup-submit:hover { background: #7A1418; }
+
+  .business-field.hidden { display: none; }
+
+  .signup-status {
+    font-size: 0.8rem;
+    margin: 8px 0 0;
+    min-height: 1em;
+  }
+
+  .signup-status.success { color: #E4B84A; }
+  .signup-status.error { color: #ff8080; }
+
+  @media (max-width: 480px) {
+    .signup-popup {
+      left: 16px;
+      right: 16px;
+      max-width: none;
+      bottom: 16px;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  const SUPABASE_URL = "https://bjsesbhhheitkkbnsvsy.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqc2VzYmhoaGVpdGtrYm5zdnN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1MTIwNjUsImV4cCI6MjEwNTA4ODA2NX0.t5yUjgvPbjwUpd7OpBU_Qsk3XqiVRf6jRM-6Ygs7X38";
+
+  // Persisted across visits/sessions on this browser — this is the real
+  // "already signed up" memory. It's a local flag, not a server-verified
+  // identity: clearing browser data or switching devices resets it, and
+  // it can't stop the same person signing up twice from two different
+  // browsers/phones. Good enough for "stop nagging this visitor" — not
+  // a substitute for a real account system.
+  const STORAGE_KEY = "lottolit912_signup_status";
+
+  const popup = document.getElementById("signup-popup");
+  if (!popup) return; // safety: don't error on a page missing the markup
+
+  const status = document.getElementById("signup-status");
+  const existing = localStorage.getItem(STORAGE_KEY);
+
+  // Already signed up or previously dismissed on this browser — never show again.
+  if (existing === "signed_up" || existing === "dismissed") {
+    popup.remove();
+    return;
+  }
+
+  const closeBtn = document.getElementById("signup-close");
+  const toggleBtns = document.querySelectorAll(".toggle-btn");
+  const typeInput = document.getElementById("signup-type");
+  const businessField = document.getElementById("business-name-field");
+  const form = document.getElementById("signup-form");
+
+  let hasShown = false;
+
+  window.addEventListener("scroll", function () {
+    if (hasShown) return;
+    const max = document.body.scrollHeight - window.innerHeight;
+    const scrolled = max > 0 ? (window.scrollY / max) * 100 : 100;
+    if (scrolled > 40) {
+      hasShown = true;
+      popup.classList.remove("hidden");
+      requestAnimationFrame(() => popup.classList.add("visible"));
+    }
+  });
+
+  closeBtn.addEventListener("click", function () {
+    popup.classList.remove("visible");
+    localStorage.setItem(STORAGE_KEY, "dismissed");
+    setTimeout(() => popup.classList.add("hidden"), 300);
+  });
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      toggleBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const type = btn.dataset.type;
+      typeInput.value = type;
+      businessField.classList.toggle("hidden", type !== "business");
+    });
+  });
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const email = document.getElementById("signup-email").value.trim();
+    const type = typeInput.value;
+    const businessName = document.getElementById("business-name").value.trim();
+
+    status.textContent = "Checking...";
+    status.className = "signup-status";
+
+    try {
+      // Real check against Supabase: has this exact email already signed up,
+      // from any browser/device? Calls a Postgres function (see SQL setup)
+      // that returns only true/false — it never exposes the email_signups
+      // table itself, so the public-read-off policy on that table stays intact.
+      const checkRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/email_already_signed_up`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON_KEY,
+          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify({ check_email: email })
+      });
+      const alreadyExists = await checkRes.json();
+
+      if (alreadyExists === true) {
+        status.textContent = "You're already on the list.";
+        status.className = "signup-status success";
+        localStorage.setItem(STORAGE_KEY, "signed_up");
+        setTimeout(() => {
+          popup.classList.remove("visible");
+          setTimeout(() => popup.classList.add("hidden"), 300);
+        }, 2000);
+        return;
+      }
+
+      status.textContent = "Submitting...";
+
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/email_signups`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON_KEY,
+          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify({
+          email: email,
+          signup_type: type,
+          business_name: type === "business" ? businessName : null
+        })
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      status.textContent = "You're in. Welcome to the 912.";
+      status.className = "signup-status success";
+      localStorage.setItem(STORAGE_KEY, "signed_up");
+      form.reset();
+      setTimeout(() => {
+        popup.classList.remove("visible");
+        setTimeout(() => popup.classList.add("hidden"), 300);
+      }, 2000);
+
+    } catch (err) {
+      status.textContent = "Something went wrong. Try again.";
+      status.className = "signup-status error";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
