@@ -147,6 +147,29 @@
     max-width: 68ch;
   }
 
+  /* Twitch Stream Embed Container */
+  .twitch-embed-container {
+    position: relative;
+    width: 100%;
+    max-width: 68ch;
+    aspect-ratio: 16 / 9;
+    margin: 24px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--black-soft);
+    border: 2px solid var(--gold);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .twitch-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   .placeholder-note {
     background: #FFF9E6;
     border: 1px dashed var(--gold);
@@ -260,6 +283,15 @@
 
     <h2>Streams &amp; community</h2>
     <p>[Placeholder — current gaming content, streams, community built around it.]</p>
+
+    <!-- Twitch Stream Embed Player -->
+    <div class="twitch-embed-container">
+      <iframe
+        src="https://player.twitch.tv/?channel=lottolit912&parent=lottolit912.com"
+        allowfullscreen="true">
+      </iframe>
+    </div>
+
     <div class="placeholder-note">Placeholder content — swap this in for the real material from the Lotto Lit Brand Building project (or write fresh) before this page goes live.</div>
 
     <a href="/lifestyle/" class="back-to-hub">&larr; Back to Lotto Lit Lifestyle</a>
@@ -279,8 +311,6 @@
 
 <!-- ============================================================
      LOTTO LIT 912 — SHARED EMAIL SIGNUP POPUP
-     Paste this whole block (HTML + style + script) before </body>
-     on every page. Nothing else needs to change per-page.
      ============================================================ -->
 
 <div id="signup-popup" class="signup-popup hidden">
@@ -438,21 +468,14 @@
   const SUPABASE_URL = "https://bjsesbhhheitkkbnsvsy.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqc2VzYmhoaGVpdGtrYm5zdnN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1MTIwNjUsImV4cCI6MjEwNTA4ODA2NX0.t5yUjgvPbjwUpd7OpBU_Qsk3XqiVRf6jRM-6Ygs7X38";
 
-  // Persisted across visits/sessions on this browser — this is the real
-  // "already signed up" memory. It's a local flag, not a server-verified
-  // identity: clearing browser data or switching devices resets it, and
-  // it can't stop the same person signing up twice from two different
-  // browsers/phones. Good enough for "stop nagging this visitor" — not
-  // a substitute for a real account system.
   const STORAGE_KEY = "lottolit912_signup_status";
 
   const popup = document.getElementById("signup-popup");
-  if (!popup) return; // safety: don't error on a page missing the markup
+  if (!popup) return;
 
   const status = document.getElementById("signup-status");
   const existing = localStorage.getItem(STORAGE_KEY);
 
-  // Already signed up or previously dismissed on this browser — never show again.
   if (existing === "signed_up" || existing === "dismissed") {
     popup.remove();
     return;
@@ -503,10 +526,6 @@
     status.className = "signup-status";
 
     try {
-      // Real check against Supabase: has this exact email already signed up,
-      // from any browser/device? Calls a Postgres function (see SQL setup)
-      // that returns only true/false — it never exposes the email_signups
-      // table itself, so the public-read-off policy on that table stays intact.
       const checkRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/email_already_signed_up`, {
         method: "POST",
         headers: {
@@ -566,3 +585,5 @@
 
 </body>
 </html>
+
+

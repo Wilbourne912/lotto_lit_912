@@ -108,6 +108,27 @@
     border-bottom: 1px solid var(--bone-line);
   }
 
+
+.hero-profile-photo {
+  width: 160px; /* Adjust size as needed */
+  height: 160px;
+  border-radius: 50%; /* This makes it a circle */
+  overflow: hidden;
+  border: 3px solid var(--gold); /* Adds a subtle gold border around the circle */
+  margin: 28px auto 0;
+}
+
+.hero-profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps his face proportional without stretching */
+  display: block;
+}
+
+
+
+
+
   .page-tag {
     display: inline-block;
     font-size: 0.8rem;
@@ -156,6 +177,88 @@
     color: #6B5A1E;
     margin: 24px 0;
     max-width: 68ch;
+  }
+
+  /* ---------- At-a-glance strip ---------- */
+
+  .glance-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--bone-line);
+    border: 1px solid var(--bone-line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 28px 0 40px;
+    max-width: 68ch;
+  }
+
+  .glance-item {
+    background: #FFFDF7;
+    padding: 16px 14px;
+    text-align: center;
+  }
+
+  .glance-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .glance-value {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  @media (max-width: 560px) {
+    .glance-strip { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Pull-quote ---------- */
+
+  .pull-quote {
+    border-left: 3px solid var(--red);
+    margin: 32px 0;
+    padding: 6px 0 6px 22px;
+    max-width: 62ch;
+  }
+
+  .pull-quote p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--black);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* ---------- Section image styling ---------- */
+
+  .story-photo {
+    max-width: 68ch;
+    margin: 28px 0;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--bone-line);
+  }
+
+  .story-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .story-photo-caption {
+    background: #FFFDF7;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--bone-line);
   }
 
   .media-placeholder {
@@ -248,23 +351,66 @@
     <span class="page-tag">HIS STORY</span>
     <h1>Where it started</h1>
     <p>Before the directory, before the Ambassador — this is the actual story. Growing up in the 912, finding the mic, and how it all led here.</p>
+
+<div class="hero-profile-photo">
+  <img src="https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/lotto.jpg?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9sb3R0by5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkwNDA4OTE5LCJleHAiOjE4MjE5NDQ5MTl9.MNrpD0AxKa40Olr-2tNBd-VVgKQwVM60umaHxcPDpPoyyLUZMmP-21X8NZf-QVNt2zOeYyuRCRNKP2MNvdDVhQ" alt="Lotto Lit — The Ambassador" loading="eager">
+</div>
+
+
   </div>
 </section>
 
 <section class="page-body">
   <div class="wrap">
 
-    <h2>Growing up in the 912</h2>
-    <p>[Placeholder — this is where the long-form bio-blog content goes: upbringing, the 912 as a place, and the early influences that shaped Lotto Lit.]</p>
-    <div class="media-placeholder">[ Photo / video placeholder ]</div>
+    <div class="glance-strip">
+      <div class="glance-item">
+        <span class="glance-label">FROM</span>
+        <span class="glance-value">Hinesville, GA</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-label">BASED NOW</span>
+        <span class="glance-value">Jesup, GA</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-label">FOCUS TODAY</span>
+        <span class="glance-value">Family, Battle Rap, 912</span>
+      </div>
+    </div>
+
+    <h2>Where it started</h2>
+    <p>Lotto Lit grew up in Hinesville, Georgia — a Liberty County city built in the shadow of Fort Stewart, one of the largest military installations on the East Coast. It's the kind of place where a lot of people come and go, where roots get planted around a base rather than a boardwalk. That's where the story starts, not on a stage.</p>
+
+    <div class="story-photo">
+      <img src="https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/hinesville.jpeg?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9oaW5lc3ZpbGxlLmpwZWciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkwNDA5MDU1LCJleHAiOjE4MjE5NDUwNTV9.mmYbfCFlVnW9WXNCBXfga1fQpRlNDq64d3wWZE0rqOtrY8lCzcNfURQZpZDlxECxqbr5jagDTb64r7DS2Aov2A" alt="Hinesville, GA — where it started" loading="lazy">
+      <div class="story-photo-caption">Hinesville, GA — where it started</div>
+    </div>
 
     <h2>Finding the mic</h2>
-    <p>[Placeholder — the transition from freestyling during gaming sessions into battle rap, per the existing Lowport mythology arc "The Prophecy" / "The Teacher."]</p>
+    <p>The bars came before any of it was serious. Like a lot of his generation, Lotto Lit found his voice online, freestyling during gaming sessions with friends — no studio, no audience beyond whoever was in the lobby that night. It wasn't a plan. It was just what happened when the mic was already open and the beat was already in his head.</p>
+
+    <div class="pull-quote">
+      <p>"It wasn't a plan. It was just what happened when the mic was already open."</p>
+    </div>
+
+    <p>What started as something to do between matches turned into something worth taking seriously. The freestyles sharpened into real bars, and the bars led him into battle rap — a different kind of competition, where the only response to what someone says about you is what you say back, on the spot, in front of everyone. That's where Lotto Lit actually built his name.</p>
+
+    <h2>A different kind of build</h2>
+    <p>For a while, the path pointed somewhere else entirely: an idea for a gaming company, born out of the same world where the freestyling first started. It made sense on paper — the game was already home. But somewhere between the idea and the execution, life asked for something different. Lotto Lit stepped back from building a company to focus on raising a family, and to put his full attention back into the two things that had carried him from the start: his battle rap career, and the community he'd built along the way.</p>
+
+    <div class="story-photo">
+      <img src="https://bjsesbhhheitkkbnsvsy.supabase.co/storage/v1/object/sign/media/jesup.jpeg?token=eyJraWQiOiJjZDA3NDc5OS1hNDU5LTRlYjYtYTA4My1jOTY1YTAzNWU3MWYiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJtZWRpYS9qZXN1cC5qcGVnIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MDQwOTE1MCwiZXhwIjoxODIxOTQ1MTUwfQ.U2DcLQpNhoPqoNPu9Ymo7lB-aBRfUbObGYseiIoeSVbtrxisiciKu7PYJOSrD_JyHL0Jdti4WvJyFSLCiYkW0g" alt="Jesup, GA — home base today" loading="lazy">
+      <div class="story-photo-caption">Jesup, GA — home base today</div>
+    </div>
 
     <h2>Becoming the Ambassador</h2>
-    <p>[Placeholder — how the Lotto Lit 912 mascot/ambassador concept came to be, and how it connects back to the real person telling this story.]</p>
-    <div class="placeholder-note">Placeholder content — swap this in for the real material from the Lotto Lit Brand Building project (or write fresh) before this page goes live.</div>
+    <p>That same instinct — to build something that lasts instead of something that just looks good on paper — is what led to Lotto Lit 912. Jesup is where he's based now, and where the site's street team calls home. But the idea behind it goes back further than Jesup, back to Hinesville, back to a kid freestyling in a gaming headset who eventually became someone people in the 912 actually recognize.</p>
 
+    <div class="pull-quote">
+      <p>"The same person who's been building something out of nothing since those first freestyles — just aimed at something bigger than himself now."</p>
+    </div>
+
+    <p>Lotto Lit 912 isn't a side project. It's the same person who's been building something out of nothing since those first freestyles — just aimed at something bigger than himself now: a whole area code, one real business and one real story at a time.</p>
     <a href="/lifestyle/" class="back-to-hub">&larr; Back to Lotto Lit Lifestyle</a>
   </div>
 </section>
@@ -441,21 +587,14 @@
   const SUPABASE_URL = "https://bjsesbhhheitkkbnsvsy.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqc2VzYmhoaGVpdGtrYm5zdnN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1MTIwNjUsImV4cCI6MjEwNTA4ODA2NX0.t5yUjgvPbjwUpd7OpBU_Qsk3XqiVRf6jRM-6Ygs7X38";
 
-  // Persisted across visits/sessions on this browser — this is the real
-  // "already signed up" memory. It's a local flag, not a server-verified
-  // identity: clearing browser data or switching devices resets it, and
-  // it can't stop the same person signing up twice from two different
-  // browsers/phones. Good enough for "stop nagging this visitor" — not
-  // a substitute for a real account system.
   const STORAGE_KEY = "lottolit912_signup_status";
 
   const popup = document.getElementById("signup-popup");
-  if (!popup) return; // safety: don't error on a page missing the markup
+  if (!popup) return;
 
   const status = document.getElementById("signup-status");
   const existing = localStorage.getItem(STORAGE_KEY);
 
-  // Already signed up or previously dismissed on this browser — never show again.
   if (existing === "signed_up" || existing === "dismissed") {
     popup.remove();
     return;
@@ -506,10 +645,6 @@
     status.className = "signup-status";
 
     try {
-      // Real check against Supabase: has this exact email already signed up,
-      // from any browser/device? Calls a Postgres function (see SQL setup)
-      // that returns only true/false — it never exposes the email_signups
-      // table itself, so the public-read-off policy on that table stays intact.
       const checkRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/email_already_signed_up`, {
         method: "POST",
         headers: {
@@ -566,6 +701,5 @@
   });
 })();
 </script>
-
 </body>
 </html>
